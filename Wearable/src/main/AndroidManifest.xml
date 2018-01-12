@@ -97,11 +97,11 @@
             android:name=".config.AnalogComplicationConfigActivity"
             android:label="@string/analog_complication_config">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" /> //실행에 필요한 소스 추가
                 <action android:name="com.example.android.wearable.watchface.CONFIG_COMPLICATION_SIMPLE"/>
                 <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER"/> //실행에 필요한 소스 추가
             </intent-filter>
         </activity>
 
@@ -163,11 +163,11 @@
             android:name=".config.DigitalWatchFaceWearableConfigActivity"
             android:label="@string/digital_config_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />  //실행에 필요한 소스 추가
                 <action android:name="com.example.android.wearable.watchface.CONFIG_DIGITAL"/>
                 <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION"/>
                 <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER"/>  //실행에 필요한 소스 추가
             </intent-filter>
         </activity>
 

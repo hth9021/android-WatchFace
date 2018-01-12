@@ -37,9 +37,12 @@
                 android:name=".DigitalWatchFaceCompanionConfigActivity"
                 android:label="@string/app_name">
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <action android:name="com.example.android.wearable.watchface.CONFIG_DIGITAL" />
                 <category android:name="com.google.android.wearable.watchface.category.COMPANION_CONFIGURATION" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
@@ -47,9 +50,11 @@
                 android:name=".OpenGLWatchFaceConfigActivity"
                 android:label="@string/app_name">
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <action android:name="com.example.android.wearable.watchface.CONFIG_OPENGL" />
                 <category android:name="com.google.android.wearable.watchface.category.COMPANION_CONFIGURATION" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
