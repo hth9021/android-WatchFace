@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+ 라이센스 Apache2.0 사용에 관한 내용
  Copyright (C) 2017 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,9 +25,11 @@
     <uses-feature android:name="android.hardware.type.watch"/>
 
     <!-- Required to act as a custom watch face. -->
+    <!-- 맞춤 시계 모드로 작동해야 합니다. -->
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <!-- Required for complications to receive complication data and open the provider chooser. -->
+    <!-- complication 이 complication 데이터를 받고 제공자 선택기를 여는데 필요합니다. -->
     <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA"/>
 
     <application
@@ -159,6 +162,10 @@
             and android.intent.category.DEFAULT.
         -->
 
+        <!-- 설정 작업을 위한 모든 intent filter에는 카테고리가 포함 되어야 합니다.
+            com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION
+            android.intent.category.DEFAULT.
+        -->
         <activity
             android:name=".config.DigitalWatchFaceWearableConfigActivity"
             android:label="@string/digital_config_name">
@@ -197,16 +204,23 @@
             <!--
             When your complication data provider is active, UPDATE_PERIOD_SECONDS specifies how
             often you want the system to check for updates to the data.
+            복잡한 데이터 공급자가 활성화 되면 UPDATE_PERIOD_SECONDS는 종종 시스템이 데이터에 대한
+            업데이트를 확인하기를 원합니다.
 
             In general, you want to manually trigger updates only when your complication data
             actually changes via ProviderUpdateRequester (check UpdateComplicationDataService.java
             for an example).
+            일반적으로 수동으로 업데이트를 트리거하려면 complication데이터 ProviderUpdateRequester를 통해
+            실제로 변경됩니다.(예시 UpdateComplicationDataService.java 체크)
 
             If you do decide to use UPDATE_PERIOD_SECONDS, set the interval in the order of minutes.
             A good value might be 600 seconds (10 minutes) if you need updates pulled often.
+            UPDATE_PERIOD_SECONDS를 사용하기로 결정한 경우 간격을 분 단위로 설정하십시오. 자주 가져온
+            업데이트가 필요한 경우 좋은 값은 600초(10분)일 수 있습니다.
 
             Also, remember that this is only a guidance for the system. Android Wear may update less
             frequently.
+            또한 이것은 시스템에 대한 지침 일뿐입니다. Android Wear가 자주 덜 업데이트 될 수 있음
             -->
             <meta-data
                 android:name="android.support.wearable.complications.UPDATE_PERIOD_SECONDS"
