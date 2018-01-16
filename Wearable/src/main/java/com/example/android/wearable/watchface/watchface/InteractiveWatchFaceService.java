@@ -33,8 +33,10 @@ import com.example.android.wearable.watchface.R;
 
 /**
  * Demonstrates interactive watch face capabilities, i.e., touching the display and registering
- * three different events: touch, touch-cancel and tap. The watch face UI will show the count of
- * these events as they occur. See the {@code onTapCommand} below.
+ * three different events: touch, touch-cancel and tap. 
+ * 디스플레이를 터치하고 터치, 터치 취소 및 탭의 세 가지 이벤트를 등록하는 등 인터랙티브 한 시계 기능을 보여줍니다.
+ * The watch face UI will show the count of these events as they occur. See the {@code onTapCommand} below.
+ * 시계 모드 UI는 이러한 이벤트의 발생 횟수를 보여줍니다. 아래의 {@code onTapCommand}를 참조하십시오.
  */
 public class InteractiveWatchFaceService extends CanvasWatchFaceService {
 
@@ -70,8 +72,10 @@ public class InteractiveWatchFaceService extends CanvasWatchFaceService {
         private final Rect mCardBounds = new Rect();
 
         /**
-         * Whether the display supports fewer bits for each color in ambient mode. When true, we
-         * disable anti-aliasing in ambient mode.
+         * Whether the display supports fewer bits for each color in ambient mode.
+         * 디스플레이가 주변 모드에서 각 색상에 대해 더 적은 비트를 지원하는지 여부.
+         * When true, we disable anti-aliasing in ambient mode.
+         * true이면 앰비언스 모드에서 앤티 앨리어싱을 비활성화합니다.
          */
         private boolean mLowBitAmbient;
 
@@ -83,6 +87,7 @@ public class InteractiveWatchFaceService extends CanvasWatchFaceService {
             super.onCreate(holder);
 
             /** Accepts tap events via WatchFaceStyle (setAcceptsTapEvents(true)). */
+            /** WatchFaceStyle을 통해 탭 이벤트를 수용합니다 (setAcceptsTapEvents (true)).*/
             setWatchFaceStyle(new WatchFaceStyle.Builder(InteractiveWatchFaceService.this)
                     .setCardPeekMode(WatchFaceStyle.PEEK_MODE_VARIABLE)
                     .setBackgroundVisibility(WatchFaceStyle.BACKGROUND_VISIBILITY_INTERRUPTIVE)
@@ -114,6 +119,7 @@ public class InteractiveWatchFaceService extends CanvasWatchFaceService {
             super.onApplyWindowInsets(insets);
 
             /** Loads offsets / text size based on device type (square vs. round). */
+            /** 장치 유형 (사각형 대 원형)을 기준으로 오프셋 / 텍스트 크기를로드합니다. */
             Resources resources = InteractiveWatchFaceService.this.getResources();
             boolean isRound = insets.isRound();
             mXOffset = resources.getDimension(
@@ -171,6 +177,7 @@ public class InteractiveWatchFaceService extends CanvasWatchFaceService {
 
         /*
          * Captures tap event (and tap type) and increments correct tap type total.
+         * 탭 이벤트 (및 탭 유형)를 캡처하고 올바른 탭 유형 합계를 증가시킵니다.
          */
         @Override
         public void onTapCommand(int tapType, int x, int y, long eventTime) {
@@ -199,6 +206,7 @@ public class InteractiveWatchFaceService extends CanvasWatchFaceService {
         @Override
         public void onDraw(Canvas canvas, Rect bounds) {
             /** Draws background */
+            /** 배경을 그립니다. */
             canvas.drawColor(Color.BLACK);
 
             canvas.drawText(
@@ -227,6 +235,7 @@ public class InteractiveWatchFaceService extends CanvasWatchFaceService {
             );
 
             /** Covers area under peek card */
+            /** peek card 밑에 지역을 덮기*/
             if (isInAmbientMode()) {
                 canvas.drawRect(mCardBounds, mPeekCardBackgroundPaint);
             }
