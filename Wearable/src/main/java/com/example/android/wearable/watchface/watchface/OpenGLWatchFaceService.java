@@ -186,7 +186,7 @@ public class OpenGLWatchFaceService extends Gles2WatchFaceService {
             // Create triangles for the ticks.
             // 틱에 대한 삼각형을 만듭니다.
             mMajorTickTriangles = createMajorTicks(triangleProgram);
-            mMinorTickTriangles = createMinorTicks(triangleProgram);
+            mMajorTickTriangles = createMinorTicks(triangleProgram);
 
             // Create triangles for the hands.
             // 손으로 삼각형을 만듭니다.
@@ -533,7 +533,7 @@ public class OpenGLWatchFaceService extends Gles2WatchFaceService {
             // Draw the major and minor ticks.
             // 크고 작은 틱을 그립니다.
             mMajorTickTriangles.draw(vpMatrix);
-            mMinorTickTriangles.draw(vpMatrix);
+            mMajorTickTriangles.draw(vpMatrix);
 
             // Draw every frame as long as we're visible and in interactive mode.
             // 우리가 볼 수 있고 대화식 모드 인 한 모든 프레임을 그립니다.
