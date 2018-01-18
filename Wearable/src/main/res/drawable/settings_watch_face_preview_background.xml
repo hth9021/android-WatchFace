@@ -15,9 +15,16 @@
   ~ limitations under the License.
   -->
 <!-- 시계의 모양을 변경할 수 있는 소스 -->
-<shape
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle"> <!-- android:shape="자신이 원하는 모양"-->
-    <solid
-        android:color="@color/white"/> <!-- android:color="@color/자신이 원하는 색갈-->
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/white"/>
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/bg"
+        android:bottom="10dp"
+        android:left="10dp"
+        android:right="10dp"
+        android:top="10dp"/>
+</layer-list>
